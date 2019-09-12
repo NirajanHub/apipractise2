@@ -1,8 +1,8 @@
 from django.urls import path
+from .views import ArticleView
 
-from practise_api.practise_one.views import ArticleView
-
-app_name = 'practise_one'
+app_name = 'articles'
 urlpatterns = [
-    path('articles/', ArticleView.as_view())
+    path('articles/', ArticleView.as_view()),
+    path('articles/<int:pk>', ArticleView.as_view()),
 ]
